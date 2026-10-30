@@ -218,6 +218,21 @@ body.hero-active{background:#090a0b;color:#f5f5f3}
 @media(max-width:759px){.tech-model{left:-17px;right:-17px;top:432px}}
 @media(prefers-reduced-motion:reduce){.tech-hero *{transition:none!important;animation:none!important}.tech-hero.is-mounted h1 b,.tech-hero.is-mounted :is(.tech-kicker,h2,.tech-intro,.tech-actions,.tech-experience,.tech-rail,.tech-scene-footer,.tech-model-top,.tech-callout){opacity:1!important;translate:none!important;transform:none!important}}
 /* Motion only: preserve every original type, spacing and model placement. */
+#stage .tech-hero:not(.is-ready) :is(.tech-kicker,h1,h2,.tech-intro,.tech-actions,.tech-experience,.tech-rail,.tech-scene-footer,.tech-model-top,.tech-callout){opacity:0;visibility:hidden;pointer-events:none}
+.tech-hero.is-ready .tech-kicker{transition-delay:0s!important}
+.tech-hero.is-ready h1>span:first-child b{transition-delay:.08s}
+.tech-hero.is-ready h1>span:nth-child(2) b{transition-delay:.26s}
+.tech-hero.is-ready h2{transition-delay:.44s!important}
+.tech-hero.is-ready .tech-intro{transition-delay:.62s!important}
+.tech-hero.is-ready .tech-actions{transition-delay:.78s!important}
+.tech-hero.is-ready .tech-experience{transition-delay:.92s!important}
+.tech-hero.is-ready :is(.tech-model-top,.tech-callout){transition-delay:.5s!important}
+.tech-hero.is-ready .tech-scene-footer{transition-delay:.82s!important}
+.tech-hero.is-ready .tech-rail{transition-delay:1.05s!important}
+/* Presentation chrome follows the cover copy; icon navigation stays available. */
+.hero-active:has(#stage .tech-hero:not(.is-ready)),.hero-active:has(#stage .tech-hero:not(.is-ready)) :is(.topbar,.bottom-bar,.floating-nav){transition:none}
+.hero-active :is(.wordmark>span:last-child,.top-center,.home-motion-button>span,.top-actions>.text-button,.bottom-hint){transition:opacity .65s .55s ease}
+.hero-active:has(#stage .tech-hero:not(.is-ready)) :is(.wordmark>span:last-child,.top-center,.home-motion-button>span,.top-actions>.text-button,.bottom-hint){opacity:0;visibility:hidden;transition:none}
 .tech-hero.is-mounted h1 b{filter:blur(10px);transition:transform 1.2s cubic-bezier(.19,1,.22,1),opacity 1s,filter 1.2s cubic-bezier(.19,1,.22,1)}
 .tech-hero.is-ready h1 b{filter:blur(0)}
 .tech-hero.phase-changing :is(.tech-brief-title,.tech-brief-copy){animation:techBriefReveal .65s cubic-bezier(.19,1,.22,1) both}
@@ -1056,7 +1071,6 @@ window.EV_HERO_HTML = `
       raf = null;
       if (!root.isConnected) { cleanup(); return; }
       if (!active()) return;
-      if (entering) { entering = false; root.classList.add('is-ready'); }
       const dt = previous === null ? 0 : clamp((timestamp - previous) / 1000, 0, .05);
       previous = timestamp;
       if (exit) {
@@ -1064,6 +1078,10 @@ window.EV_HERO_HTML = `
         if (exit.elapsed >= .3) { finishLeave(); return; }
       } else {
         elapsed += dt;
+        // Let the model assemble and the first charging pulse connect before copy enters.
+        if (entering && elapsed >= 3.6) {
+          entering = false; root.classList.add('is-ready');
+        }
         if (!manual) setPhase(Math.floor(Math.max(0, elapsed - 3.8) / 7) % 3);
         const amount = 1 - Math.exp(-5 * dt);
         px += (targetX - px) * amount; py += (targetY - py) * amount;
@@ -1073,12 +1091,6 @@ window.EV_HERO_HTML = `
     }
     function sync() {
       stop();
-      if (paused && entering) {
-        entering = false; root.classList.add('is-ready');
-        root.getAnimations?.({ subtree: true }).forEach(animation => {
-          try { animation.finish(); } catch (_) { /* Only finite entrance animations finish. */ }
-        });
-      }
       if (active()) { thaw(); start(); }
       else freeze();
       controls();
