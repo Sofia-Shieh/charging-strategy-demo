@@ -221,6 +221,8 @@ body.hero-active{background:#090a0b;color:#f5f5f3}
 .tech-tenure:after{content:"";position:absolute;bottom:0;left:2px;width:30px;height:2px;background:var(--tech-orange)}
 .tech-experience>div{padding-left:22px;border-left:1px solid #34373a;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0;line-height:1.8}
 .tech-experience>div>span{display:block;color:#929aa1;font-size:11px;font-weight:400;margin-top:3px}
+.tech-presenter-name{font-size:16px;font-weight:600;color:#f1f1ee}.tech-presenter-divider{display:inline-block;margin:0 9px;font-style:normal;color:var(--tech-orange)}
+@media(max-width:759px){.tech-presenter-name{font-size:13px}.tech-presenter-divider{margin:0 6px}}
 .tech-model{position:absolute;left:478px;right:-30px;top:35px;height:620px;z-index:0;pointer-events:none}.tech-canvas{display:block;width:100%;height:100%;touch-action:pan-y}.tech-model-top{position:absolute;left:755px;right:70px;top:105px;display:flex;align-items:center;gap:12px;padding-bottom:11px;border-bottom:1px solid #ffffff12;color:#949ba0;font:500 11px/1.2 var(--sans);letter-spacing:.13em;pointer-events:none}.tech-model-label{white-space:nowrap}.tech-cross{position:relative;display:block;flex:0 0 16px;height:16px}.tech-cross:before,.tech-cross:after{content:"";position:absolute;background:var(--tech-orange)}.tech-cross:before{width:16px;height:1px;left:0;top:50%}.tech-cross:after{width:1px;height:16px;left:50%;top:0}.tech-model-id{margin-left:auto;color:#5c646a;font:10px/1 var(--sans);letter-spacing:.08em}
 .tech-callout{position:absolute;display:flex;gap:10px;align-items:center;pointer-events:none;color:#b9bfc2;font-size:12px;letter-spacing:.07em}.tech-callout small{display:block;color:#565f67;font:9px/1.5 Consolas,monospace;letter-spacing:.14em;margin-top:5px}.tech-callout i{height:1px;width:45px;background:#6c4b35;position:relative}.tech-callout i:before{content:"";position:absolute;left:0;top:-2px;width:5px;height:5px;border:1px solid #ff6a00;background:#090a0b}.tech-callout-a{right:57px;top:266px}.tech-callout-b{left:667px;top:548px;flex-direction:row-reverse;text-align:right}.tech-callout-b i{width:65px;transform:rotate(-24deg);transform-origin:left}
 .tech-scene-footer{position:absolute;right:67px;bottom:185px;left:750px;border-top:1px solid #34383d;padding-top:16px;display:grid;grid-template-columns:1fr auto;align-items:start;gap:7px 20px}.tech-brief-title{font-family:var(--sans);font-size:12px;font-weight:500;color:#efb183;letter-spacing:0}.tech-brief-copy{font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:0;color:#a0a8af;grid-column:1}.tech-controls{display:flex;gap:19px;grid-column:2;grid-row:1/3;color:#727b83;padding-top:4px}.tech-controls button{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:0}.tech-controls button:hover{color:#ff6a00}
@@ -576,14 +578,14 @@ window.EV_HERO_HTML = `
 <div class="atlas-hero tech-hero" data-phase="0">
   <div class="tech-atmosphere" aria-hidden="true"></div>
   <div class="tech-model" aria-hidden="true"><canvas class="tech-canvas"></canvas></div>
-  <div class="tech-topline"><span><i></i> CHARGING STRATEGY</span><span>FIELD NOTES <b>2026</b></span></div>
+  <div class="tech-topline"><span><i></i> CHARGING STRATEGY</span><span>STRATEGY INSIGHTS <b>2026</b></span></div>
   <div class="tech-copy">
     <div class="tech-kicker"><span>滴滴充电</span><i aria-hidden="true">丨</i><span class="tech-kicker-note">经验分享</span></div>
     <h1><span><b>让增长，</b></span><span><b>成为<span class="tech-orange">运营</span>的结果。</b></span></h1>
     <h2>从城市策略，到可复用的经营方法</h2>
     <p class="tech-intro">围绕供需、定价与生命周期，<br>分享兼顾订单增长与收益质量的运营策略。</p>
     <div class="tech-actions"><button class="tech-start" data-go="1"><span>进入经营方法</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button><button class="tech-index" data-action="overview">浏览章节 <span>↗</span></button></div>
-    <div class="tech-experience"><strong class="tech-tenure"><span class="tech-tenure-number">4</span><span class="tech-tenure-unit">年</span><sup>+</sup></strong><div>滴滴充电<span>城市区域策略运营实践</span></div></div>
+    <div class="tech-experience"><strong class="tech-tenure"><span class="tech-tenure-number">4</span><span class="tech-tenure-unit">年</span><sup>+</sup></strong><div><b class="tech-presenter-name">王榕榕</b><i class="tech-presenter-divider" aria-hidden="true">·</i>滴滴充电<span>城市区域策略运营实践</span></div></div>
   </div>
   <div class="tech-model-top"><span class="tech-cross" aria-hidden="true"></span><span class="tech-model-label">DIGITAL ENERGY MODEL</span><span class="tech-model-id">[ 01—03 ]</span></div>
   <div class="tech-callout tech-callout-a"><i></i><span>有效供给<small>SUPPLY</small></span></div>
