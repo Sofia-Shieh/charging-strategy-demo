@@ -115,7 +115,7 @@
     const mobile=w<=760,short=h<=720;
     const full={x:0,y:0,width:w,height:h,r:0};
     const split=mobile?{x:22,y:h*.145,width:w-44,height:h*(short?.26:.28),r:12}:{x:w*.044,y:h*.235,width:w*.445,height:h*.47,r:18};
-    const end=mobile?{x:22,y:h*.265,width:w-44,height:h*(short?.205:.23),r:12}:{x:w*.46,y:h*.165,width:w*.496,height:h*.45,r:18};
+    const end=mobile?{x:22,y:h*(short?.29:.265),width:w-44,height:h*(short?.205:.23),r:12}:{x:w*.46,y:h*.165,width:w*.496,height:h*.45,r:18};
     let from,to,t;
     if(value<.57){from=full;to=split;t=smooth(range(value,.055,.29));}
     else{from=split;to=end;t=smooth(range(value,.57,.82));}
