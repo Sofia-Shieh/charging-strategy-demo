@@ -219,6 +219,98 @@ body.hero-active{background:#090a0b;color:#f5f5f3}
 @media(prefers-reduced-motion:reduce){.tech-hero *{transition:none!important;animation:none!important}.tech-hero.is-mounted h1 b,.tech-hero.is-mounted :is(.tech-kicker,h2,.tech-intro,.tech-actions,.tech-experience,.tech-rail,.tech-scene-footer,.tech-model-top,.tech-callout){opacity:1!important;translate:none!important;transform:none!important}}
 @media print{.print-slide.cover-slide{width:1440px;height:810px;padding:0;zoom:.67;background:#090a0b}.tech-hero{min-height:810px;height:810px;color:white!important;background:#090a0b!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.tech-hero *{opacity:1!important;translate:none!important;transform:none!important}.tech-hero h1{font-size:87px!important}.tech-controls,.tech-actions{display:none}.tech-model{display:block}.tech-experience{margin-top:45px}}
 </style>
+  <style>/* A shared charging scene, then three open editorial columns. */
+.report-slide.opening-slide{animation:none!important}
+.opening-bridge{--opening-orange:#ff6800;--opening-ink:#171717;color:var(--opening-ink);font-size:18px;line-height:1.5}
+.opening-bridge p,.opening-bridge h1,.opening-bridge h2,.opening-bridge figure{margin:0}
+.opening-top{display:grid;grid-template-columns:520px minmax(0,1fr);gap:64px;align-items:center}
+.opening-scene{position:relative;width:100%;height:292px;overflow:hidden;border-radius:15px;background:#090a0b;isolation:isolate}
+.opening-preview{display:block;width:100%;height:100%;position:absolute;inset:0}
+.opening-scene-caption{position:absolute;left:23px;right:23px;bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:15px;color:#c8cbc7;font-size:11px;letter-spacing:.04em;pointer-events:none}
+.opening-scene-caption>span:first-child{display:flex;align-items:center;gap:8px}
+.opening-scene-caption i{width:4px;height:4px;display:block;background:var(--opening-orange);box-shadow:0 0 9px #ff680060;border-radius:50%}
+.opening-scene-caption>span:last-child{color:#737873;font-size:8px;letter-spacing:.12em}
+.opening-statement{padding:2px 0}
+.opening-kicker{display:flex;align-items:center;gap:11px;font-size:11px;letter-spacing:.13em;color:#77766f;font-weight:600;margin-bottom:17px}
+.opening-kicker:before{content:'';width:21px;height:2px;background:var(--opening-orange)}
+.opening-statement h1{font-size:58px!important;line-height:1.2!important;font-weight:650!important;letter-spacing:-.045em}
+.opening-statement h1 em{font:inherit;color:var(--opening-orange)}
+.opening-premise{font-size:24px;color:#4e504b;margin-top:16px!important;letter-spacing:-.025em}
+.opening-description{font-size:18px;color:#85867d;line-height:1.75;margin-top:13px!important}
+.opening-thread{display:flex;align-items:center;gap:20px;font-size:12px;color:#94958c;margin-top:19px}
+.opening-thread i{font-style:normal;color:#c7c6bc}
+.opening-thread b{font-weight:500;color:#c76a24}
+.opening-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:37px;margin-top:31px}
+.opening-metric{border-top:1px solid #d9d9d1;padding-top:13px;min-width:0}
+.opening-metric-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.opening-metric-index{font-size:10px;font-weight:500;letter-spacing:.13em;color:#909186}
+.opening-metric-heading svg{display:block!important;width:25px!important;height:25px!important;color:#dc772e;flex-shrink:0}
+.opening-metric h2{font-size:32px;line-height:1.2;letter-spacing:-.045em;font-weight:600}
+.opening-metric h2 span{display:block;font-size:18px;font-weight:500;letter-spacing:-.01em;margin-top:12px;color:#363a2e}
+.opening-metric>p{font-size:17px;line-height:1.75;color:#7a7d70;margin-top:12px;min-height:59px}
+.opening-takeaway{display:flex;gap:8px;align-items:center;margin-top:13px;color:#a09b8c;font-size:12px}
+.opening-takeaway i{display:block;width:13px;height:1px;background:#dca275;flex-shrink:0}
+.opening-experience{display:grid;grid-template-columns:240px 1fr 1fr;align-items:center;gap:32px;border-top:1px solid #e6e5de;border-bottom:1px solid #e6e5de;padding:17px 0;margin-top:25px}
+.opening-years{display:flex;align-items:center;gap:18px}
+.opening-years>strong{font-size:36px;font-weight:500;line-height:1.1;color:#c56b28;letter-spacing:-.055em}
+.opening-years>strong>span{font-size:15px;letter-spacing:-.04em;margin-left:5px}
+.opening-years>small{font-size:12px;line-height:1.7;color:#919284}
+.opening-outcome{display:flex;flex-direction:column;gap:6px;padding-left:29px;border-left:1px solid #e5e5dc}
+.opening-outcome>strong{font-size:20px;font-weight:500;line-height:1.3;letter-spacing:-.025em}
+.opening-outcome i{font-style:normal;font-size:15px;color:#df7d31;margin:0 8px}
+.opening-outcome>span{font-size:12px;color:#909284}
+.opening-method{display:flex;align-items:baseline;gap:22px;margin-top:20px}
+.opening-method>span{color:#bc682a;font-size:13px;white-space:nowrap}
+.opening-method>p{font-size:16px;color:#8a8b7e;line-height:1.65}
+.opening-method strong{font-weight:500;color:#4f5545}
+@media(max-width:759px){
+  .opening-top{grid-template-columns:1fr;gap:26px}
+  .opening-scene{height:auto;aspect-ratio:520/292;border-radius:12px}
+  .opening-scene-caption{left:16px;right:16px;bottom:14px;font-size:9px;gap:8px}
+  .opening-scene-caption>span:last-child{font-size:6px;letter-spacing:.05em}
+  .opening-statement{padding:0}
+  .opening-kicker{font-size:9px;letter-spacing:.09em;margin-bottom:14px;gap:9px}
+  .opening-statement h1{font-size:37px!important;line-height:1.2!important}
+  .opening-premise{font-size:18px;margin-top:15px!important;line-height:1.6}
+  .opening-description{font-size:15px;margin-top:10px!important;line-height:1.8}
+  .opening-thread{font-size:11px;gap:17px;margin-top:16px}
+  .opening-metrics{grid-template-columns:1fr;gap:23px;margin-top:29px}
+  .opening-metric{padding-top:13px}
+  .opening-metric-heading{margin-bottom:9px}
+  .opening-metric-index{font-size:9px}
+  .opening-metric-heading svg{width:24px!important;height:24px!important}
+  .opening-metric h2{font-size:28px}
+  .opening-metric h2 span{font-size:17px;margin-top:10px}
+  .opening-metric>p{font-size:15px;line-height:1.85;min-height:0;margin-top:11px}
+  .opening-takeaway{font-size:11px;margin-top:12px}
+  .opening-experience{grid-template-columns:1fr;gap:17px;padding:20px 0;margin-top:28px}
+  .opening-years{gap:17px}
+  .opening-years>strong{font-size:35px}
+  .opening-years>small{max-width:none;font-size:12px}
+  .opening-outcome{padding-left:15px;gap:7px}
+  .opening-outcome>strong{font-size:21px}
+  .opening-outcome>span{font-size:12px;line-height:1.5}
+  .opening-method{display:block;margin-top:20px}
+  .opening-method>span{font-size:12px}
+  .opening-method>p{font-size:14px;line-height:1.85;margin-top:7px}
+}
+@media print{
+  .opening-reveal{opacity:1!important;transform:none!important;filter:none!important}
+  .opening-scene{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
+</style>
+  <style>/* One shared charging scene, from full cover to the operating question. */
+body,.topbar,.bottom-bar,.floating-nav,.wordmark,.top-center,.top-actions,.bottom-label,.bottom-hint{transition:background-color 1s ease,color .8s ease,border-color .8s ease}
+.tech-hero.bridge-exiting .tech-copy,.tech-hero.bridge-exiting .tech-topline,.tech-hero.bridge-exiting .tech-model-top,.tech-hero.bridge-exiting .tech-callout,.tech-hero.bridge-exiting .tech-scene-footer,.tech-hero.bridge-exiting .tech-rail{animation:bridgeTitleOut .32s ease both!important}
+@keyframes bridgeTitleOut{to{opacity:0;transform:translateY(-20px);filter:blur(7px)}}
+.bridge-running #stage>.slide{animation:none!important}
+.opening-flight{position:fixed;z-index:4;overflow:hidden;pointer-events:none;background:#090a0b;contain:layout paint;box-shadow:0 18px 60px #00000009}
+.opening-flight-visual{position:absolute;pointer-events:none}
+.opening-flight canvas{display:block;width:100%;height:100%}
+.bridge-arriving .opening-reveal{opacity:0}
+@media(prefers-reduced-motion:reduce){body,.topbar,.bottom-bar,.floating-nav,.wordmark,.top-center,.top-actions,.bottom-label,.bottom-hint{transition:none}}
+@media print{.opening-flight{display:none!important}.bridge-arriving .opening-scene{visibility:visible}.bridge-arriving .opening-reveal{opacity:1}}
+</style>
 </head>
 <body>
   <header class="topbar">
@@ -826,6 +918,40 @@ window.EV_HERO_HTML = `
   function leave(done) { if (current) current.leave(done); else if (typeof done === 'function') done(); }
   function drawPoster(canvas) { const renderer = createRenderer(canvas); renderer.render(3.2, 2, 0, 0, true); }
 
+  // The opening transition and its landing scene share the same camera/time seed.
+  let previewSeed = null;
+  function seedPreview(seed) { previewSeed = seed; }
+  function capture() { return current?.state() || { elapsed: 3.2, phase: 2, px: 0, py: 0 }; }
+  function mountPreview(canvas, seed = previewSeed || { elapsed: 3.2, phase: 2, px: 0, py: 0 }) {
+    const renderer = createRenderer(canvas);
+    const query = matchMedia('(prefers-reduced-motion: reduce)');
+    let elapsed = seed.elapsed, raf = null, previous = null, disposed = false;
+    const paint = () => renderer.render(elapsed, seed.phase, seed.px || 0, seed.py || 0, query.matches);
+    const resize = () => { if (!disposed) { renderer.resize(); paint(); } };
+    const observer = new ResizeObserver(resize);
+    function stop() { if (raf !== null) cancelAnimationFrame(raf); raf = null; previous = null; }
+    function frame(time) {
+      raf = null;
+      if (disposed || !canvas.isConnected) { cleanup(); return; }
+      if (document.hidden || query.matches) return;
+      if (previous !== null) elapsed += Math.min((time - previous) / 1000, .05);
+      previous = time; paint(); raf = requestAnimationFrame(frame);
+    }
+    function sync() { stop(); paint(); if (!disposed && !document.hidden && !query.matches) raf = requestAnimationFrame(frame); }
+    function cleanup() {
+      if (disposed) return;
+      disposed = true; stop(); observer.disconnect();
+      document.removeEventListener('visibilitychange', sync);
+      window.removeEventListener('resize', resize);
+      query.removeEventListener('change', sync);
+    }
+    observer.observe(canvas);
+    document.addEventListener('visibilitychange', sync);
+    window.addEventListener('resize', resize, { passive: true });
+    query.addEventListener('change', sync);
+    sync(); return cleanup;
+  }
+
   function mount(root) {
     unmount();
     if (!root?.isConnected) return () => {};
@@ -980,7 +1106,7 @@ window.EV_HERO_HTML = `
       frozen.clear(); root.classList.add('is-paused');
       if (current === controller) current = null;
     }
-    const controller = { cleanup, leave: beginLeave };
+    const controller = { cleanup, leave: beginLeave, state: () => ({ elapsed, phase, px, py }) };
     current = controller;
     observer?.observe(canvas);
     listen(window, 'resize', resize, { passive: true });
@@ -998,7 +1124,7 @@ window.EV_HERO_HTML = `
     sync();
     return cleanup;
   }
-  window.EVHero = { mount, unmount, leave, drawPoster };
+  window.EVHero = { mount, unmount, leave, drawPoster, capture, seedPreview, mountPreview };
 })();
 </script>
   <script>/* Six visible dimensions, one guided reading path. No live business data. */
@@ -1555,6 +1681,157 @@ window.EV_HERO_HTML = `
   }};
 })();
 </script>
+  <script>/* The opening image becomes a working perspective: one scene, three questions. */
+(() => {
+  'use strict';
+  const metrics = [
+    {
+      number: '01', label: 'VOLUME', title: '订单',
+      icon: '<path d="M4 17V12M10 17V8M16 17V4M3 21H21"/><path d="M15 5H20V10"/>',
+      question: '用户是否持续选择平台？',
+      description: '拆分新客、复购与频次，区分市场自然增长和运营动作带来的变化。',
+      takeaway: '看增长来源，也看后续留存。'
+    },
+    {
+      number: '02', label: 'SHARE', title: '份额',
+      icon: '<circle cx="12" cy="12" r="8"/><path d="M12 4V12L18 17M12 12H20"/>',
+      question: '平台在当地处于什么位置？',
+      description: '对齐城市与区块的供给、需求份额，判断是覆盖不足，还是需求承接不足。',
+      takeaway: '份额变化要放回大盘比较。'
+    },
+    {
+      number: '03', label: 'PROFIT', title: '利润',
+      icon: '<path d="M4 18L9 13L13 16L21 6M15 6H21V12"/><path d="M4 6H9M6.5 3.5V8.5"/>',
+      question: '现有增长能否长期维持？',
+      description: '结合价格、平台补贴与商户共担，观察订单增长对应的经营贡献。',
+      takeaway: '提价与补贴都要看持续效果。'
+    }
+  ];
+  const html = `<div class="opening-bridge">
+    <div class="opening-top">
+      <figure class="opening-scene" aria-label="沿用封面的新能源车充电线框场景">
+        <canvas class="opening-preview" aria-hidden="true"></canvas>
+        <figcaption class="opening-scene-caption opening-reveal" style="--opening-order:1"><span><i></i> 场站 · 用户 · 区域</span><span>CONNECTED PERSPECTIVE</span></figcaption>
+      </figure>
+      <header class="opening-statement">
+        <div class="opening-kicker opening-reveal" style="--opening-order:0">01 / THE OPERATING QUESTION</div>
+        <h1 class="opening-reveal" style="--opening-order:1">增长，要有<em>质量。</em></h1>
+        <p class="opening-premise opening-reveal" style="--opening-order:2">从一次充电，看到一座城市的经营。</p>
+        <p class="opening-description opening-reveal" style="--opening-order:3">订单、份额、利润一起看，<br>才能知道增长来自哪里、能否持续。</p>
+        <div class="opening-thread opening-reveal" style="--opening-order:4"><span>城市实践</span><i>→</i><span>共同判断</span><i>→</i><b>中台方法</b></div>
+      </header>
+    </div>
+    <div class="opening-metrics">${metrics.map((item, index) => `<article class="opening-metric opening-reveal" style="--opening-order:${5 + index}">
+      <div class="opening-metric-heading"><span class="opening-metric-index">${item.number} / ${item.label}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${item.icon}</svg></div>
+      <h2>${item.title}<span>${item.question}</span></h2>
+      <p>${item.description}</p>
+      <div class="opening-takeaway"><i></i>${item.takeaway}</div>
+    </article>`).join('')}</div>
+    <div class="opening-experience opening-reveal" style="--opening-order:8">
+      <div class="opening-years"><strong>4<span>年＋</span></strong><small>城市策略运营实践</small></div>
+      <div class="opening-outcome"><strong>劣势阶段 <i>↗</i> 进阶阶段</strong><span>为平台订单增长与城市份额负责</span></div>
+      <div class="opening-outcome"><strong>亏损 <i>↗</i> 盈利</strong><span>持续校准价格、投入与经营效率</span></div>
+    </div>
+    <div class="opening-method opening-reveal" style="--opening-order:9"><span>中台的价值</span><p>把一线判断，沉淀为<strong>可比较的数据、可选择的策略、可验证的执行规则。</strong></p></div>
+  </div>`;
+
+  function mount(slide) {
+    if (!slide) return () => {};
+    slide.classList.add('opening-slide');
+    const canvas = slide.querySelector('.opening-preview');
+    let preview = null;
+    if (canvas) {
+      if (typeof window.EVHero?.mountPreview === 'function') preview = window.EVHero.mountPreview(canvas);
+      else window.EVHero?.drawPoster(canvas);
+    }
+    return () => {
+      if (typeof preview === 'function') preview();
+      else preview?.cleanup?.();
+      slide.classList.remove('opening-slide');
+    };
+  }
+  window.DECK_ENHANCEMENTS = window.DECK_ENHANCEMENTS || {};
+  window.DECK_ENHANCEMENTS[1] = { title: '增长，要有质量', html, mount };
+})();
+</script>
+  <script>(() => {
+  'use strict';
+  let active = null;
+  let committing = false;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const ease = 'cubic-bezier(.22,.72,.16,1)';
+  function finish() { active?.finish(); }
+  function play(commit) {
+    if (active || reduced.matches || document.hidden) return false;
+    const hero = document.querySelector('#stage .tech-hero');
+    const model = hero?.querySelector('.tech-model');
+    if (!hero || !model) return false;
+    const animations = [];
+    let timer, doneTimer, frame, cleanupPreview, committed = false, disposed = false;
+    const state = { finish: end };
+    active = state;
+    document.body.classList.add('bridge-running');
+    hero.classList.add('bridge-exiting');
+    function changePage() {
+      if (committed) return;
+      committed = true; committing = true;
+      try { commit(); } finally { committing = false; }
+    }
+    function end() {
+      if (disposed) return;
+      disposed = true;
+      clearTimeout(timer); clearTimeout(doneTimer);
+      animations.forEach(animation => animation.cancel());
+      cleanupPreview?.(); frame?.remove();
+      hero.classList.remove('bridge-exiting');
+      if (active === state) active = null;
+      document.body.classList.remove('bridge-running', 'bridge-arriving');
+      changePage();
+      window.EVHero?.seedPreview(null);
+    }
+    timer = setTimeout(() => {
+      if (disposed) return;
+      const start = hero.getBoundingClientRect();
+      const source = model.getBoundingClientRect();
+      const seed = window.EVHero.capture();
+      window.EVHero.seedPreview(seed);
+      frame = document.createElement('div');
+      frame.className = 'opening-flight'; frame.setAttribute('aria-hidden', 'true');
+      Object.assign(frame.style, { left: start.left + 'px', top: start.top + 'px', width: start.width + 'px', height: start.height + 'px' });
+      const visual = document.createElement('div'); visual.className = 'opening-flight-visual';
+      const sourceStyle = { left: (source.left - start.left) / start.width * 100 + '%', top: (source.top - start.top) / start.height * 100 + '%', width: source.width / start.width * 100 + '%', height: source.height / start.height * 100 + '%' };
+      Object.assign(visual.style, sourceStyle);
+      const canvas = document.createElement('canvas'); visual.append(canvas); frame.append(visual); document.body.append(frame);
+      cleanupPreview = window.EVHero.mountPreview(canvas, seed);
+      document.body.classList.add('bridge-arriving');
+      changePage();
+      const target = document.querySelector('#stage .opening-scene');
+      if (!target) { end(); return; }
+      const destination = target.getBoundingClientRect();
+      const radius = parseFloat(getComputedStyle(target).borderTopLeftRadius) * destination.width / target.offsetWidth;
+      animations.push(frame.animate([
+        { left: start.left + 'px', top: start.top + 'px', width: start.width + 'px', height: start.height + 'px', borderRadius: '0px' },
+        { left: destination.left + 'px', top: destination.top + 'px', width: destination.width + 'px', height: destination.height + 'px', borderRadius: radius + 'px' }
+      ], { duration: 1550, easing: ease, fill: 'forwards' }));
+      animations.push(visual.animate([sourceStyle, { left: '0%', top: '0%', width: '100%', height: '100%' }], { duration: 1550, easing: ease, fill: 'forwards' }));
+      document.querySelectorAll('#stage .opening-reveal').forEach((element, i) => {
+        animations.push(element.animate([
+          { opacity: 0, transform: 'translateY(22px)', filter: 'blur(5px)' },
+          { opacity: 1, transform: 'translateY(0)', filter: 'blur(0)' }
+        ], { duration: 700, delay: 620 + i * 60, easing: ease, fill: 'both' }));
+      });
+      animations.push(frame.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 240, delay: 1540, fill: 'forwards' }));
+      doneTimer = setTimeout(end, 2050);
+    }, 300);
+    return true;
+  }
+  window.addEventListener('resize', finish);
+  window.addEventListener('beforeprint', finish);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) finish(); });
+  reduced.addEventListener('change', event => { if (event.matches) finish(); });
+  window.OpeningTransition = { play, finish, get active() { return !!active; }, get committing() { return committing; } };
+})();
+</script>
   <script>/* Buildless, offline-ready presentation. All data comes from the supplied brief. */
 (() => {
   'use strict';
@@ -1706,8 +1983,10 @@ window.EV_HERO_HTML = `
     else if(enhancements[index]?.mount)enhancedCleanup=enhancements[index].mount($('.slide',stage));
   }
   function go(n){
+    if(window.OpeningTransition?.active){if(n===0)window.OpeningTransition.finish();else return;}
     const next=Math.max(0,Math.min(15,n));if(next===index)return;
     const commit=()=>{index=next;try{history.replaceState(null,'','#'+(index+1));}catch{location.hash=String(index+1)}render()};
+    if(index===0&&next===1&&!mode&&window.OpeningTransition?.play(commit))return;
     if(index===0&&window.EVHero?.leave){window.EVHero.leave(commit);return}
     commit();
   }
@@ -1717,6 +1996,7 @@ window.EV_HERO_HTML = `
     if(lastFocus?.isConnected)lastFocus.focus();lastFocus=null;
   }
   function openOverlay(kind){
+    window.OpeningTransition?.finish();
     if(mode===kind){closeOverlay();return}
     if(!mode)lastFocus=document.activeElement;
     mode=kind;document.body.classList.add('overlay-open');
@@ -1747,7 +2027,7 @@ window.EV_HERO_HTML = `
     try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else throw new Error('unsupported');}catch{toast('当前预览不支持全屏，可在独立浏览器打开后重试。')}
   }
   function toast(text){const e=document.createElement('div');e.className='toast';e.textContent=text;document.body.append(e);setTimeout(()=>e.remove(),4000)}
-  function preparePrint(){if($('#printDeck'))return;const print=document.createElement('div');print.id='printDeck';print.innerHTML=slides.map((s,i)=>'<section class="print-slide tone-'+tones[i]+' '+(i===0?'cover-slide':'report-slide')+'"><div class="print-page">'+String(i+1).padStart(2,'0')+' / 16</div>'+s.html+'</section>').join('');document.body.append(print);const poster=$('.tech-canvas',print);if(poster)window.EVHero?.drawPoster?.(poster)}
+  function preparePrint(){window.OpeningTransition?.finish();if($('#printDeck'))return;const print=document.createElement('div');print.id='printDeck';print.innerHTML=slides.map((s,i)=>'<section class="print-slide tone-'+tones[i]+' '+(i===0?'cover-slide':'report-slide')+'"><div class="print-page">'+String(i+1).padStart(2,'0')+' / 16</div>'+s.html+'</section>').join('');document.body.append(print);$$('.tech-canvas,.opening-preview',print).forEach(poster=>window.EVHero?.drawPoster?.(poster))}
   function printDeck(){closeOverlay();preparePrint();window.print()}
   window.addEventListener('beforeprint',preparePrint);
   window.addEventListener('afterprint',()=>$('#printDeck')?.remove());
@@ -1767,7 +2047,7 @@ window.EV_HERO_HTML = `
   $('#prevButton').onclick=()=>go(index-1);$('#nextButton').onclick=()=>go(index+1);
   $('#overviewButton').onclick=$('#pageButton').onclick=()=>openOverlay('overview');
   $('#notesButton').onclick=()=>openOverlay('notes');$('#helpButton').onclick=()=>openOverlay('help');$('#fullscreenButton').onclick=fullscreen;
-  $('#homeMotionButton').onclick=()=>{if(mode)closeOverlay();if(index===0)render();else go(0);};
+  $('#homeMotionButton').onclick=()=>{window.OpeningTransition?.finish();if(mode)closeOverlay();if(index===0)render();else go(0);};
   document.addEventListener('keydown',e=>{
     if(e.defaultPrevented)return;
     if(e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
@@ -1786,7 +2066,7 @@ window.EV_HERO_HTML = `
   viewport.addEventListener('touchcancel',()=>{touchStart=null},{passive:true});
   viewport.addEventListener('touchend',e=>{if(!touchStart||mode)return;const dx=e.changedTouches[0].clientX-touchStart.x,dy=e.changedTouches[0].clientY-touchStart.y;if(Math.abs(dx)>65&&Math.abs(dx)>Math.abs(dy)*1.5)go(index+(dx<0?1:-1));touchStart=null},{passive:true});
   window.addEventListener('resize',resize);
-  window.addEventListener('hashchange',()=>{const n=Number(location.hash.slice(1))-1;if(Number.isInteger(n)&&n>=0&&n<16){index=n;render()}});
+  window.addEventListener('hashchange',()=>{const n=Number(location.hash.slice(1))-1;if(Number.isInteger(n)&&n>=0&&n<16){window.OpeningTransition?.finish();index=n;history.replaceState(null,'','#'+(n+1));render()}});
   document.addEventListener('fullscreenchange',()=>{$('#fullscreenButton').setAttribute('aria-label',document.fullscreenElement?'退出全屏':'进入全屏');resize()});
   render();
 })();
