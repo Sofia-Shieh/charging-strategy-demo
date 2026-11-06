@@ -1,0 +1,14 @@
+{
+  "name": "charging-cover-avelon",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent charging strategy presentation cover inspired by Avelon's continuous scene transitions.",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "build": "node bundle.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

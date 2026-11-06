@@ -1,0 +1,29 @@
+/* The narrative stays in one frame as the presenter scene becomes the city network. */
+body,.topbar,.bottom-bar,.floating-nav,.wordmark,.top-center,.top-actions,.bottom-label,.bottom-hint{transition:background-color 1s ease,color .8s ease,border-color .8s ease}
+.tech-hero.bridge-exiting .tech-copy,.tech-hero.bridge-exiting .tech-topline,.tech-hero.bridge-exiting .tech-model-top,.tech-hero.bridge-exiting .tech-callout,.tech-hero.bridge-exiting .tech-scene-footer,.tech-hero.bridge-exiting .tech-rail{animation:bridgeTitleOut .3s ease both!important}
+.tech-hero.bridge-exiting *{animation-play-state:running!important}
+.tech-hero.bridge-exiting .tech-model{animation:bridgeSceneOut .25s ease both!important}
+@keyframes bridgeSceneOut{to{opacity:0;filter:blur(5px)}}
+@keyframes bridgeTitleOut{to{opacity:0;transform:translateY(-20px);filter:blur(7px)}}
+.bridge-running #stage>.slide,.bridge-running #stage>.profile-page{animation:none!important}
+.bridge-running #stage .profile-record-charging,.bridge-running #stage .profile-experience,.bridge-running #stage .profile-record-charging .profile-record-graphic,.profile-dialog .bridge-scene-settled{animation:none!important;transform:none!important;opacity:1!important}
+.profile-record-graphic.bridge-scene-settled{transition:none!important}
+.bridge-source-scene,.bridge-target-scene{visibility:hidden!important}
+.opening-flight{position:fixed;z-index:4;overflow:hidden;pointer-events:none;contain:layout paint}
+.opening-flight>.opening-flight-layer{position:absolute!important;inset:0!important;margin:0!important;width:100%!important;height:100%!important;min-height:0!important;max-width:none!important;border:0!important;border-radius:0!important;pointer-events:none;will-change:transform,opacity,filter,clip-path}
+.opening-flight>.opening-flight-layer>svg{display:block!important;width:100%!important;height:100%!important}
+.opening-flight-source{z-index:1}
+.opening-flight-visual{z-index:2}
+.opening-flight-profile{background:#25281f;color:#f4efd9;--plot-accent:#dfa575;--profile-pan-x:0px;--profile-pan-y:0px}
+.opening-flight .opening-flight-profile-context,.opening-flight .opening-flight-profile-context>.profile-record{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;max-width:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;transform:none!important;transition:none!important;animation:none!important;overflow:hidden!important;background:#25281f!important;color:#f4efd9!important;--plot-accent:#dfa575;--profile-pan-x:0px;--profile-pan-y:0px}
+.opening-flight .opening-flight-profile-art{position:absolute!important;inset:auto!important;top:50%!important;left:50%!important;display:block!important;flex:none!important;width:var(--flight-art-width)!important;height:var(--flight-art-height)!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;transform:translate(-50%,-50%) scale(var(--flight-art-scale,1))!important;transform-origin:center!important;transition:none!important;animation:none!important;opacity:1!important;background:#25281f!important}
+.opening-flight .profile-record-svg{width:100%!important;height:100%!important;display:block!important}
+.opening-flight .profile-draw,.opening-flight .profile-node-reveal{animation:none!important;opacity:1!important;transform:none!important;stroke-dashoffset:0!important}
+.opening-flight-energy{position:absolute;inset:12% 7%;z-index:3;pointer-events:none;color:#ff8a3c}
+.opening-flight-energy>svg{display:block;width:100%;height:100%;overflow:visible}
+.opening-flight-energy path{stroke:currentColor;stroke-width:1;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-dasharray:9 91;animation:bridgeEnergy .9s ease-in-out both}
+.opening-flight-energy path:nth-child(2){animation-delay:.08s;opacity:.5}
+.opening-flight-energy circle{fill:#ffb17c}
+@keyframes bridgeEnergy{from{stroke-dashoffset:12}to{stroke-dashoffset:-105}}
+@media(prefers-reduced-motion:reduce){body,.topbar,.bottom-bar,.floating-nav,.wordmark,.top-center,.top-actions,.bottom-label,.bottom-hint{transition:none}.opening-flight *{animation:none!important}}
+@media print{.opening-flight{display:none!important}.bridge-source-scene,.bridge-target-scene{visibility:visible!important}}

@@ -1,0 +1,12 @@
+{
+  "name": "charging-strategy-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node serve.mjs",
+    "check": "node verify.mjs",
+    "build": "node build-site.mjs"
+  }
+}

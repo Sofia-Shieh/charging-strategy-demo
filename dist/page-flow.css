@@ -1,0 +1,17 @@
+/* 00 cover → 01 profile → 02 report. The profile uses its own full-screen layout. */
+body.profile-active { background: #fff; }
+.profile-active .topbar,
+.profile-active .bottom-bar,
+.profile-active .progress-track { display: none; }
+.profile-active #viewport { inset: 0; overflow: auto; overscroll-behavior: contain; }
+.profile-active #stage {
+  position: relative; top: auto; left: auto;
+  width: 100%; min-height: 100dvh; height: auto;
+  transform: none; isolation: isolate;
+}
+.profile-active #stage > .profile-page { position: relative; z-index: 0; min-height: 100dvh; }
+#stage > .slide:focus { outline: none; }
+@media print {
+  #printDeck .profile-print { padding: 0; width: 1440px; height: 810px; zoom: .67; }
+  #printDeck .profile-print .profile-dialog { display: block !important; position: relative; min-height: 0; }
+}

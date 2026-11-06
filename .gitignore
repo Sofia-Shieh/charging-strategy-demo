@@ -1,0 +1,11 @@
+delivery/
+screenshots/
+*.log
+.tmp/
+.openai/
+publish-profile/
+node_modules/
+_site/
+.env
+.env.*
+!.env.example
